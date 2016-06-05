@@ -1,5 +1,9 @@
 # Phearb
 
+[![Gem Version](https://badge.fury.io/rb/phearb.svg)](https://badge.fury.io/rb/phearb)
+
+[![Build Status](https://travis-ci.org/joaquinrulin/phearb.svg?branch=master)](https://travis-ci.org/joaquinrulin/phearb)
+
 Phearb is a library for handling connections to [**phear**](https://github.com/Tomtomgo/phearjs) servers. It allows ruby apps to easy fetch sites source code using phear.
 
 ## Installation
@@ -29,13 +33,13 @@ Phearb.configure do |config|
 end
 ```
 
-## Usage 
+## Usage
 ```ruby
 response = Phearb.fetch('http://www.google.com')
 puts response.content if response.success
 ```
 
-Simply calling `Phearb.fetch(<url>)` will do the job. It returns an `Phearb::Response` object wrapping the phearb server response with one method per key: 
+Simply calling `Phearb.fetch(<url>)` will do the job. It returns an `Phearb::Response` object wrapping the phearb server response with one method per key:
 ```
 {
   "success": true,
