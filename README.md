@@ -39,7 +39,7 @@ puts response.content if response.success
 ```
 
 Simply calling `Phearb.fetch(<url>)` will do the job. It returns an `Phearb::Response` object wrapping the phearb server response with one method per key:
-```
+```js
 {
   "success": true,
   "input_url": "http://such-website.com",
