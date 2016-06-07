@@ -29,6 +29,7 @@ Put these lines in the configuration section of you app. In rails you should pro
 Phearb.configure do |config|
   config.host = <host> # Defaults to 'localhost'
   config.port = <port> # Defaults to 8100
+  config.timeout <timeout_in_seconds> # Defaults to 5
 end
 ```
 
