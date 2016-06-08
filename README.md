@@ -59,6 +59,13 @@ Simply calling `Phearb.fetch(<url>)` will do the job. It returns an `Phearb::Res
 
 Then if you need access to the `final_url` you can call `response.final_url`.
 
+### Passing options
+As phear support optional parameters, so does the gem. The `fetch` method call supports passing an second parameter with a hash of options. For a list of available options see [phear's README](https://github.com/Tomtomgo/phearjs#usage) since the names are consistent.
+
+```ruby
+Phearb.fetch('http://www.google.com', force: true, parse_delay: 500)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

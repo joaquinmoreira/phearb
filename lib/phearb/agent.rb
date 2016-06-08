@@ -9,9 +9,11 @@ module Phearb
       @url = url
     end
 
-    def fetch
+    def fetch(options = {})
+      params = options.merge(fetch_url: @url)
+
       Timeout::timeout(Phearb.configuration.timeout.to_f) do
-        http_response = RestClient.get(server_url, params: { fetch_url: @url })
+        http_response = RestClient.get(server_url, params: params)        
         Response.from_json(http_response)
       end
     rescue Timeout::Error => exception

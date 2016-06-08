@@ -7,15 +7,24 @@ describe Phearb::Agent do
     before(:example) do
       @fetch_url = 'dummy_url'
       @server_url = "#{Phearb::Configuration::DEFAULT_HOST}:#{Phearb::Configuration::DEFAULT_PORT}"
+      @response = { foo: :bar }.to_json
 
       stub_request(:get, @server_url).
       with(query: { fetch_url: @fetch_url }).
-      to_return(status: 200, body: { foo: :bar }.to_json)
+      to_return(status: 200, body: @response)
     end
 
     it 'performs a get request' do
       expect(subject.fetch).to have_requested(:get, @server_url).
         with(query: { fetch_url: @fetch_url })
+    end
+
+    it 'handles options' do
+      allow(RestClient).to receive(:get) do |url, _|
+        expect(_[:params][:some_option]).to eq(:some_value)
+      end.and_return(@response)
+
+      subject.fetch(some_option: :some_value)
     end
 
     it 'returns an instance of Phearb::Response' do
