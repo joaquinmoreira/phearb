@@ -21,5 +21,13 @@ describe Phearb::Agent do
     it 'returns an instance of Phearb::Response' do
       expect(subject.fetch).to be_an_instance_of Phearb::Response
     end
+
+    it 'raises Error::Timeout when timeout reached' do
+      allow(RestClient).to receive(:get) do |_|
+        sleep(Phearb.configuration.timeout + 0.1)
+      end
+
+      expect { subject.fetch }.to raise_error(Phearb::Error::Timeout)
+    end
   end
 end
