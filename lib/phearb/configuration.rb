@@ -6,7 +6,7 @@ module Phearb
 
     DEFAULT_HOST = 'localhost'
     DEFAULT_PORT = 8100
-    DEFAULT_TIMEOUT = 5
+    DEFAULT_TIMEOUT = 60
 
     def initialize
       @host = DEFAULT_HOST

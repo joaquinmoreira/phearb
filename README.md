@@ -1,6 +1,6 @@
 # Phearb
 
-[![Gem Version](https://badge.fury.io/rb/phearb.svg)](https://badge.fury.io/rb/phearb) 
+[![Gem Version](https://badge.fury.io/rb/phearb.svg)](https://badge.fury.io/rb/phearb)
 [![Build Status](https://travis-ci.org/joaquinrulin/phearb.svg?branch=master)](https://travis-ci.org/joaquinrulin/phearb)
 
 Phearb is a library for handling connections to [**phear**](https://github.com/Tomtomgo/phearjs) servers. It allows ruby apps to easy fetch sites source code using phear.
@@ -29,7 +29,7 @@ Put these lines in the configuration section of you app. In rails you should pro
 Phearb.configure do |config|
   config.host = <host> # Defaults to 'localhost'
   config.port = <port> # Defaults to 8100
-  config.timeout <timeout_in_seconds> # Defaults to 5
+  config.timeout <timeout_in_seconds> # Defaults to 60
 end
 ```
 
