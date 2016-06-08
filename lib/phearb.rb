@@ -14,8 +14,8 @@ module Phearb
       yield(configuration)
     end
 
-    def fetch(url)
-      Agent.new(url).fetch
+    def fetch(url, options = {})
+      Agent.new(url).fetch(options)
     end
   end
 end
