@@ -60,7 +60,7 @@ Simply calling `Phearb.fetch(<url>)` will do the job. It returns an `Phearb::Res
 Then if you need access to the `final_url` you can call `response.final_url`.
 
 ### Passing options
-As phear support optional parameters, so does the gem. The `fetch` method call supports passing an second parameter with a hash of options. For a list of available options see [phear's README](https://github.com/Tomtomgo/phearjs#usage) since the names are consistent.
+As phear support optional parameters, so does the gem. The `fetch` method call supports passing an second parameter with a hash of options. For a list of available options see [phear's README](https://github.com/Tomtomgo/phearjs#usage) since the names are consistent.
 
 ```ruby
 Phearb.fetch('http://www.google.com', force: true, parse_delay: 500)
