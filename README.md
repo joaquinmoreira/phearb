@@ -23,7 +23,7 @@ Or install it yourself as:
 
 ## Configuration
 
-Put these lines in the configuration section of you app. In rails you should probably add an `initializer` or in one of your `environment` files:
+Put these lines in the configuration section of you app. In rails you should probably add an `initializer` or put in one of your `environment` files:
 
 ```ruby
 Phearb.configure do |config|
